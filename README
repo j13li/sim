@@ -1,0 +1,22 @@
+﻿Compilation:
+execute "make" in the directory with the Makefile
+
+Usage: sim <options>
+    Options:
+        -l      lowest request rate
+        -h      highest request rate
+        -t      request rate step
+        -r      number of requests to make per run, default TOTAL_REQUESTS
+        -s      scheduling policy, valid options are 
+            "FCFS"  first come first serve
+            "TH"    threshold method
+            "S1"    only use server 1
+            "S2"    only use server 2
+            "QL"	assign jobs depending on each server's queue length
+			"RR"	round robin
+        -p      parameter for scheduling policies
+            QL		queue length difference between server 1 and 2
+            TH      queue length must be longer than param to start serving jobs to server 2
+        -o      timeout value, number of seconds a job will wait in the queue
+                before being discarded with a response time of 0
+        -f      output file
